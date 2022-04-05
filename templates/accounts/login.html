@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+<link rel="stylesheet" media="screen and (max-width:600px)" href="{% static 'index/css/nav-small.css' %}">
+{% endblock %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block nav %}
+{% include 'index/nav.html' %}
+{% endblock %}
+{% block main %}
+<!-- sign up의 main.html 영역 시작 -->
+<div class="main">
+    <div class="main-container0">
+    </div>
+    <div class="main-container1">
+        <div class="main-container1-container">
+            <br>
+            <h2>환영합니다.</h2>
+            <br>
+            <form class="form-container" method="POST">
+                {% csrf_token %}
+                <label><input class="input" type="email" placeholder=" 아이디를 입력하세요" name="username"></label>
+                <label><input class="input" type="password" placeholder=" 비밀번호를 입력하세요" name="password"></label>
+                <div class="submit-container">
+                    <input class="submit" type="submit" value="로그인"/>
+                </div>
+            </form>
+            <div class="container-signup">
+                <a href="{% url 'signup' %}"><p>회원이 아니신가요?</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="main-container0">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sign up의 main.html 영역 끝 -->
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

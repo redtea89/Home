@@ -1,0 +1,45 @@
+
+<div id="map" style="width:1000px;height:700px;"></div>
+{{ data.xplot|json_script:"xplot"}}
+{{ data.yplot|json_script:"yplot"}}
+{{ data.address|json_script:"address"}}
+{{ data.name|json_script:"name"}}
+<script>
+        const xplot = JSON.parse(document.getElementById('xplot').textContent);
+        const yplot = JSON.parse(document.getElementById('yplot').textContent);
+        const address = JSON.parse(document.getElementById('address').textContent);
+        const name = JSON.parse(document.getElementById('name').textContent);
+
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        // center: new kakao.maps.LatLng(34.49278, 126.04561), // 지도의 중심좌표
+		        center: new kakao.maps.LatLng(xplot,yplot), // 지도의 중심좌표
+		        level: 3, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+
+        // 지도에 마커를 생성하고 표시한다
+    var marker = new kakao.maps.Marker({
+        // position: new kakao.maps.LatLng(37.56682, 126.97865), // 마커의 좌표
+        position: new kakao.maps.LatLng(xplot,yplot), // 마커의 좌표
+        map: map // 마커를 표시할 지도 객체
+    });
+    		// 마커 위에 표시할 인포윈도우를 생성한다
+		var infowindow = new kakao.maps.InfoWindow({
+		    content : '<div style="padding:5px;">'+ name +'</div>' // 인포윈도우에 표시할 내용
+		});
+
+		// 인포윈도우를 지도에 표시한다
+		infowindow.open(map, marker);
+
+        		// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+		kakao.maps.event.addListener(marker, 'click', function() {
+		    alert(xplot);
+		    // alert('마커를 클릭했습니다!');
+		});
+
+    </script>

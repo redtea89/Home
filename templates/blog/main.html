@@ -1,0 +1,16 @@
+{% load static %}
+<div class="main">
+    <div class="main-container">
+        <div class="main-container-margin"><h1>{{ writing.title }}</h1></div>
+        <div class="main-container-margin"><small class="datetime">{{ writing.created }}</small></div>
+        <!-- <div><img src="{% static 'blog/image/src/image-4.png' %}"></div> -->
+        <div ><img src="{% get_static_prefix %}blog/image/src/image-{{writing.id}}.png"></div>
+        <div class="main-container-margin"><sub>| 아름다운 그림으로 마음을 정화하자<p></sub></div>
+        <br />
+        <div class="main-container-margin">{{ writing.text | safe }}</div>
+    </div>
+</div>
+<div class="main2">
+    <div class="main2-container">
+    </div>
+</div>

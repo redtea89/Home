@@ -1,0 +1,5 @@
+django==3.2.6
+djangorestframework==3.13.1
+mysqlclient
+gunicorn
+markdown

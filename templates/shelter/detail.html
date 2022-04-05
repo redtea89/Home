@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'shelter/css/detail.css' %}">
+<link rel="stylesheet" media="screen and (max-width:600px)" href="{% static 'index/css/nav-small.css' %}">
+{% endblock %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block main %}
+<div class="main">
+    <div class="main-container1">
+        <div id="map" class="map"></div>
+        <div><h2>{{ data.name }}</h2></div>
+        <div><p>{{ data.address }}</p></div>
+        <div class="main-container1-itembox">
+            <div><p>Active</p></div>
+            <div><p>수용인원 | {{ data.people}}</p></div>
+            <div><p>반려동물 | {{ data.pet }}</p></div>
+            <div><p>화장실개수 | {{ data.toilet}}</p></div>
+        </div>
+    </div>
+</div>
+<div class="main2">
+    <div class="main2-container">
+    </div>
+</div>
+{{ data.xplot|json_script:"xplot"}}
+{{ data.yplot|json_script:"yplot"}}
+{{ data.name|json_script:"name"}}
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=23a51bd25454e3f97d82d9ca085db7db"></script>
+<script>
+    const xplot = JSON.parse(document.getElementById('xplot').textContent);
+    const yplot = JSON.parse(document.getElementById('yplot').textContent);
+    const name = JSON.parse(document.getElementById('name').textContent);
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = {
+            center: new kakao.maps.LatLng(yplot, xplot), // 지도의 중심좌표
+            level: 3, // 지도의 확대 레벨
+            mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+        }; 
+    var infowindow = new kakao.maps.InfoWindow({
+    content : `<div style="padding:0 5px;font-size:14px;"><p>${name}</p></div>` // 인포윈도우에 표시할 내용
+    });
+    // 지도를 생성한다 
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+    var marker = new kakao.maps.Marker({
+        position: new kakao.maps.LatLng(yplot,xplot), // 마커의 좌표
+        map: map // 마커를 표시할 지도 객체
+		});
+    infowindow.open(map, marker);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

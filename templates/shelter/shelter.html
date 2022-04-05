@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'shelter/css/main.css' %}">
+<link rel="stylesheet" media="screen and (max-width:600px)" href="{% static 'index/css/nav-small.css' %}">
+{% endblock %}
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block nav %}
+{% include 'index/nav.html' %}
+{% endblock %}
+
+{% block main %}
+{% include 'shelter/main.html' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

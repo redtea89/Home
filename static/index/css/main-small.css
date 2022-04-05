@@ -1,0 +1,46 @@
+h6 {
+    font-size:small;
+    font-weight:200;
+}
+.main1 {
+    margin:6px;
+}
+.main1-container1 {
+    flex-direction: column;
+}
+.main1-container1 > div {
+    flex: 1 1 0px;
+}
+.main1-container1 > div:nth-child(1) {
+    margin-bottom:0;
+}
+.main1-container1 > div:nth-child(2) {
+    margin-top:4px;
+}
+.main1-container1-contents-similar > div h4 {
+    line-height: 18px;
+    font-size: 14px;
+}
+.main1-container1-contents {
+    vertical-align: center;
+}
+.main1-container1-contents h1{
+    font-size:x-large;
+    /* line-height:20px; */
+}
+.main1-container2 {
+    flex-direction: column;
+}
+.main1-container2-items {
+    display:flex;
+    flex: none;
+    border-top: 1px solid rgb(243,242,242);
+    padding-top: 7px;
+}
+.main1-container2-items > div:nth-child(1) {
+    flex: 7 1 0px;
+}
+.main1-container2-items > div:nth-child(2) {
+    flex: 12 1 0px;
+    margin-left: 10px;
+}
