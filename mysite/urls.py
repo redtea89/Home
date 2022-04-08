@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import blog.urls, game.urls, shelter.urls, accounts.urls, \
-    exercise.urls
+    exercise.urls, apis.urls
 
 from blog import views
 from django.contrib.auth.models import User
@@ -37,5 +37,6 @@ urlpatterns = [
     path('accounts/', include(accounts.urls)),
     path('registration/', include('django.contrib.auth.urls')),
     path('exercise/', include(exercise.urls)),
+    path('apis/', include(apis.urls)),
 ]
  

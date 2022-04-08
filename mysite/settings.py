@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'shelter',
     'exercise',
     'accounts',
+    'apis',
 ]
 
 MIDDLEWARE = [
@@ -96,8 +97,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 
-
-# ####### Production ###
+####### Production ###
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', #1
@@ -161,11 +161,3 @@ STATIC_ROOT =  BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}

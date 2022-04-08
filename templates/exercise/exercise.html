@@ -1,3 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/nav.css' %}">
+<link rel="stylesheet" href="{% static 'exercise/css/exercise.css' %}">
+<link rel="stylesheet" media="screen and (max-width:600px)" href="{% static 'index/css/nav-small.css' %}">
+{% endblock %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block nav %}
+{% include 'index/nav.html' %}
+{% endblock %}
+{% block main %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +21,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>API만들고얌</h1>
-    {{ request.GET}}
-
+    <h1>나의 운동일지</h1>
+    <p>와! 아이폰에서 자동으로 운동기록이 전송된다아아아</p>
+    {% for dt in data %}
+    <h3>상태: {{dt.status}}</h3>
+    <h3>운동시작시간: {{dt.created}}</h3>
+    <h3>운동종료시간: {{dt.created}}</h3>
+    <h3>위치(위도): {{dt.latitude}}</h3>
+    <h3>위치(경도): {{dt.longitude}}</h3>
+    {% endfor %}
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

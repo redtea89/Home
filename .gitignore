@@ -1,6 +1,8 @@
+.DS_Store
 staticfiles/
 *.env
 *.ipynb
 *.sh
 *.sqlite3
 .dockerignore
+.gitignore
