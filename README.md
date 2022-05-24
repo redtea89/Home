@@ -2,6 +2,8 @@
 
 나만의 홈페이지 v1.0  (개발중)
 
+기존 홈페이지[열려있음] : https://yunsangmin.com
+
 
 
 ## 제작방향
@@ -16,5 +18,4 @@
 
 ## 사용기술
 
-<img src="https://img.shields.io/badge/python-3.10.4-green"><img src="https://img.shields.io/badge/django-4.0.4-green"> <img src="https://img.shields.io/badge/mariadb--green">
-
+<img src="https://img.shields.io/badge/python-3.10.4-green"><img src="https://img.shields.io/badge/django-4.0.4-green"> 
