@@ -11,7 +11,25 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from local_settings import DEBUG, SECRET_KEY, DATABASES
+import os
+
+try:
+    from local_settings import DEBUG, SECRET_KEY, DATABASES
+except:
+    DEBUG = False
+    SECRET_KEY = os.environ['SECRET_KEY']
+    DATABASES = {
+        'default' : {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'home',
+            'USER': os.environ['MARIADB_USER'],
+            'PASSWORD': os.environ['MARIADB_ROOT_PASSWORD'],
+            'HOST': 'localhost',
+            'PORT': '3306',
+            'OPTIONS': {'charset': 'utf8mb4'}
+        }
+    }
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # local
+    'main',
 
     # third-party
     'rest_framework',
