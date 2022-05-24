@@ -1,8 +1,16 @@
+
+
 # Home
 
 나만의 홈페이지 v1.0  (개발중)
 
 기존 홈페이지[열려있음] : https://yunsangmin.com
+
+[ Azure VM  + Docker-compose(nginx - django - mariadb)]
+
+
+
+
 
 
 
