@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse("<h1>[공사중...2] 홈페이지 리뉴얼중입니다.</h1>")
 
 
-class PostListCreatetView(ListCreateAPIView):
+class PostListCreateView(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostListSerializer
 
