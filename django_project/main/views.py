@@ -1,14 +1,19 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
+
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+
+from .models import Post, Comment
+from .serializers import *
 
 def index(request):
     return HttpResponse("<h1>[공사중...2] 홈페이지 리뉴얼중입니다.</h1>")
 
 
-class IndexListView(ListView):
-    pass
+class PostListCreatetView(ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostListSerializer
 
 
-class IndexDetailView(DetailView):
-    pass
+class PostRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostDetailSerializer
