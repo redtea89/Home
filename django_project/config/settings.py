@@ -24,7 +24,7 @@ except:
             'NAME': 'home',
             'USER': os.environ['MARIADB_USER'],
             'PASSWORD': os.environ['MARIADB_ROOT_PASSWORD'],
-            'HOST': 'mariadb',
+            'HOST': 'localhost',
             'PORT': '3306',
             'OPTIONS': {'charset': 'utf8mb4'}
         }
@@ -62,11 +62,13 @@ INSTALLED_APPS = [
 
     # third-party
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",  #before django csrfmiddleware 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -141,3 +143,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+]
