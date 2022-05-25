@@ -24,7 +24,7 @@ except:
             'NAME': 'home',
             'USER': os.environ['MARIADB_USER'],
             'PASSWORD': os.environ['MARIADB_ROOT_PASSWORD'],
-            'HOST': 'localhost',
+            'HOST': 'mariadb',
             'PORT': '3306',
             'OPTIONS': {'charset': 'utf8mb4'}
         }
