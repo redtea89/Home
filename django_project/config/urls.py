@@ -20,5 +20,6 @@ from main.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('main.urls')),
+    path('api/v1/accounts/', include('accounts.urls')),
     path('', index),
 ]
