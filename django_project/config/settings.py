@@ -58,11 +58,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # local
+    'accounts',
     'main',
 
     # third-party
     'rest_framework',
-    'corsheaders',
+    # 'corsheaders', # ubuntu 에러있어서 잠시 지움
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -144,6 +147,18 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-]
+# AbsctractUser로 새롭게 User를 가져왔다면 이걸 등록해줘야함. 
+AUTH_USER_MODEL = 'accounts.User'
+
+# Ubuntu에서 에러나서 잠시 중지
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:8080",
+# ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}
