@@ -25,5 +25,5 @@
 <img src="https://img.shields.io/badge/svelte--red"> 
 
 ###### Infra
-<img src="https://img.shields.io/badge/AzureVM--blue"> <img src="https://img.shields.io/badge/GithubAction--blue"> <img src="https://img.shields.io/badge/Docker--blue"> 4-green"> <img src="https://img.shields.io/badge/Nginx--blue"> 4-green">
+<img src="https://img.shields.io/badge/AzureVM--blue"> <img src="https://img.shields.io/badge/GithubAction--blue"> <img src="https://img.shields.io/badge/Docker--blue"> <img src="https://img.shields.io/badge/Nginx--blue"> 
 
