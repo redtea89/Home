@@ -1,5 +1,4 @@
-FROM node:18 AS build
-# FROM node:18.2-bullseye-slim AS build
+FROM node:18.2-bullseye-slim AS build
 
 WORKDIR /app/svelte
 
@@ -9,5 +8,5 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx
+FROM nginx:1.22-alpine
 COPY --from=build /app/svelte/public /usr/share/nginx/html
