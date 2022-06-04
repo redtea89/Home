@@ -22,9 +22,9 @@ except:
         'default' : {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'home',
-            'USER': os.environ['MARIADB_USER'],
-            'PASSWORD': os.environ['MARIADB_ROOT_PASSWORD'],
-            'HOST': 'localhost',
+            'USER': os.environ['AZURE_MYSQL_USER'],
+            'PASSWORD': os.environ['AZURE_MYSQL_PASSWORD'],
+            'HOST': os.environ['AZURE_MYSQL_HOST'],
             'PORT': '3306',
             'OPTIONS': {'charset': 'utf8mb4'}
         }

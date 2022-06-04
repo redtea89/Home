@@ -10,7 +10,7 @@
 
 - 기존 Django Front + Backend
 
-    => Front(Svelte) + Backend(DRF) 로 변경
+  => Front(Svelte) + Backend(DRF) 로 변경
 
 
 
@@ -22,8 +22,12 @@
 
 ###### Front-end
 
-<img src="https://img.shields.io/badge/svelte--red"> 
+<img src="https://img.shields.io/badge/node-18.2.0-red"> <img src="https://img.shields.io/badge/svelte--red"> <img src="https://img.shields.io/badge/Nginx-1.22-red">
 
 ###### Infra
-<img src="https://img.shields.io/badge/AzureVM--blue"> <img src="https://img.shields.io/badge/GithubAction--blue"> <img src="https://img.shields.io/badge/Docker--blue"> <img src="https://img.shields.io/badge/Nginx--blue"> 
 
+<img src="https://img.shields.io/badge/AzureVM--blue"> <img src="https://img.shields.io/badge/GithubAction--blue"> <img src="https://img.shields.io/badge/Docker--blue">  
+
+
+
+## 아키텍쳐

@@ -1,5 +1,6 @@
 .vscode/
 *.csv
+local-docker-test.txt
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,svelte,python,visualstudiocode,macos,linux,zsh
