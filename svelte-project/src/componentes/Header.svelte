@@ -1,8 +1,7 @@
 <script>
-    let name = "안녕하시오";
 </script>
 
-<h1>Header</h1>
+<h1>웹페이지 -공사중-</h1>
 
 
 <style>

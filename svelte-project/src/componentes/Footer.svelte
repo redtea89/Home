@@ -1,8 +1,7 @@
 <script>
-    let name = "안녕하시오";
 </script>
 
-<h3>Footer</h3>
+<h3>-</h3>
 
 <style>
     h3 {
