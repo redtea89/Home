@@ -10,7 +10,7 @@
 
 - 기존 Django Front + Backend
 
-  => Front(Svelte) + Backend(DRF) 로 변경.
+  => Front(Svelte) + Backend(DRF) 로 변경
 
 
 
