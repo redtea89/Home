@@ -11,7 +11,7 @@
 - 기존 Django Front + Backend
 
   => Front(Svelte) + Backend(DRF) 로 변경
-1
+
 
 
 ## 사용기술
