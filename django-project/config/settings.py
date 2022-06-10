@@ -66,7 +66,7 @@ INSTALLED_APPS = [
 
     # third-party
     'rest_framework',
-    'tweepy',
+    # 'tweepy',
     # 'corsheaders', # ubuntu 에러있어서 잠시 지움
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
