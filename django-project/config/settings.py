@@ -61,9 +61,12 @@ INSTALLED_APPS = [
     # local
     'apps.accounts',
     'apps.blog',
+    'apps.clothes',
+    'apps.do',
 
     # third-party
     'rest_framework',
+    'tweepy',
     # 'corsheaders', # ubuntu 에러있어서 잠시 지움
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
@@ -85,7 +88,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'templates'],
+        'DIRS': [ ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
