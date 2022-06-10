@@ -2,22 +2,24 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 
-import tweepy
-from local_settings import (
-    consumer_key,
-    consumer_secret,
-    access_token,
-    access_token_secret
-)
+# 개발중
+# import tweepy
+# from local_settings import (
+#     consumer_key,
+#     consumer_secret,
+#     access_token,
+#     access_token_secret
+# )
 
 from .models import Clothes, History
 from .serializers import *
 
-auth = tweepy.OAuth1UserHandler(
-   consumer_key, consumer_secret, access_token, access_token_secret
-)
+# 개발중
+# auth = tweepy.OAuth1UserHandler(
+#    consumer_key, consumer_secret, access_token, access_token_secret
+# )
 
-api = tweepy.API(auth)
+# api = tweepy.API(auth)
 
 # api.update_status("Hello Tweepy")
 
