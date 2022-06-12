@@ -2,6 +2,8 @@
 *.csv
 local-docker-test.txt
 *.yaml
+k8s/
+*.log
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,svelte,python,visualstudiocode,macos,linux,zsh
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,svelte,python,visualstudiocode,macos,linux,zsh
