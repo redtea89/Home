@@ -8,13 +8,11 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = 'post'
+        ordering = ['updated_at']
+        
 
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     text = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        db_table = 'post_comment'
