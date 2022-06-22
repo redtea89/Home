@@ -12,7 +12,7 @@ def index(request):
 
 
 class PostListCreateView(ListCreateAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-updated_at')
     serializer_class = PostListSerializer
 
 

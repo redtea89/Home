@@ -9,7 +9,6 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['updated_at']
-        
 
 
 class Comment(models.Model):
